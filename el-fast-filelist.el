@@ -1,7 +1,7 @@
 ;; el-fast-filelist.el --- Fast file access for given folder
 
-;; Author:	Mariusz Nowak <mariusz+el-screen@medikoo.com>
-;; Copyright (C) 2011 Mariusz Nowak <mariusz+el-folder-index@medikoo.com>
+;; Author:	Mariusz Nowak <medikoo+el-fast-filelist@medikoo.com>
+;; Copyright (C) 2011 Mariusz Nowak <medikoo+el-fast-filelist@medikoo.com>
 
 ;; This program is free software; you can redistribute it and/or
 ;; modify it under the terms of the GNU General Public License as
