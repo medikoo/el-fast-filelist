@@ -26,19 +26,21 @@
 (require 'el-kit/list nil t)
 (require 'el-index/el-index nil t)
 
+(defvar el-fast-filelist-help-file
+	(concat (or (file-name-directory
+				(or load-file-name (buffer-file-name) "")) "") "HELP")
+	"Path to help file.")
+
+(defun el-fast-filelist-help ()
+	"Shows help."
+	(interactive)
+	(with-help-window (help-buffer) (princ
+			(el-kit-file-read el-fast-filelist-help-file))))
+
 ;;;###autoload
 (defun el-fast-filelist (directory prefix-key &optional options)
 	"Configure fast DIRECTORY file list access for given PREFIX-KEY.
-	OPTIONS are taken as association list:
-	`extension' - Filter files by given extension. If not given application scans
-	for most common extension and if over half of files share that extension
-	then its assumed as filter.
-	`match' - Additional regexp files filter.
-	By default all files are listed.
-	`name' - Name of filelist. Defaults to directory name.
-	`sort' - Show files in given order. Default is that files are sorted by access
-	date.
-	`prompt' - Prompt for ido select. Defaults to \"Name : \"."
+	OPTIONS are taken as association list, they're described in README file."
 	(lexical-let* (
 			(directory
 				(if (equal (substring directory (- (length directory) 1)) "/")
@@ -108,6 +110,7 @@
 		(define-key key-map "'" ido)
 		(define-key key-map "c" ido)
 		(define-key key-map "\C-c" ido)
+		(define-key key-map "?" 'el-fast-filelist-help)
 
 		(el-kit-key-set prefix-key key-map)))
 

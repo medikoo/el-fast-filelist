@@ -1,0 +1,9 @@
+el-fast-filelist keyboard bindings:
+
+<prefix> c <name> - Open file with ido mode
+<prefix> ' <name>
+
+<prefix> " <name> - List files
+<prefix> w <name>
+
+<prefix> ?				- Show this help

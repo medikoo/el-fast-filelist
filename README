@@ -1,0 +1,57 @@
+el-fast-filelist.el --- Fast file access for given folder
+
+-------------------------------------------------------------------------------
+1. About
+-------------------------------------------------------------------------------
+
+Useful when you'd like to have handy access to files in specific folder.
+I personally use it to access cheatsheets on variuos subjects.
+Let's say I need to remind myself how to configure gradient background in css,
+(thing I've noted before). With help of this script I open my cheatsheet file
+with  "<prefix> c" and typing "css".
+
+-------------------------------------------------------------------------------
+2. Installation
+-------------------------------------------------------------------------------
+
+Put following projects (see my page on github) within your load path:
+el-kit into 'el-kit' folder
+el-index into 'el-index' folder
+
+Put `el-fast-filelist' project into 'el-fast-filelist' folder in your load path
+
+-------------------------------------------------------------------------------
+3. Usage
+-------------------------------------------------------------------------------
+3.1 Initialization
+-------------------------------------------------------------------------------
+
+(require 'el-fast-filelist/el-fast-filelist)
+
+Configure access to desired folder:
+
+(el-fast-filelist "~/Documents/org/" (kbd "C-;"))
+
+Function can take also optional third argument which is association list of
+options:
+
+extension - Take into account files only with this extension. You don't need
+	to provide it if this extension is most common for given folder, it will be
+	automatically detected.
+
+match - Additional regexp rule. If extension filter is not enough. You may
+	provide regexp filter.
+
+name - Name of index buffer. Defaults to directory name.
+
+sort - Order in which files should be sorted. Default is sort by file access
+	date.
+
+prompt - Prompt text for ido open. Defaults to "Name : ".
+
+-------------------------------------------------------------------------------
+3.2 Interaction
+-------------------------------------------------------------------------------
+
+It's keyboard bindings, see HELP file
+
