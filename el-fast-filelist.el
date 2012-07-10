@@ -114,4 +114,7 @@
 
 		(el-kit-key-set prefix-key key-map)))
 
-(provide 'el-fast-filelist/el-fast-filelist)
+(provide 'el-fast-filelist)
+;; Local Variables:
+;; tab-width: 2
+;; End:
