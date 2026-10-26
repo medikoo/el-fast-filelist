@@ -1,4 +1,4 @@
-;; el-fast-filelist.el --- Fast file access for given folder
+;; el-fast-filelist.el --- Fast file access for given folder  -*- lexical-binding: t -*-
 
 ;; Author:	Mariusz Nowak <medikoo+el-fast-filelist@medikoo.com>
 ;; Copyright (C) 2011 Mariusz Nowak <medikoo+el-fast-filelist@medikoo.com>
@@ -41,7 +41,7 @@
 (defun el-fast-filelist (directory prefix-key &optional options)
 	"Configure fast DIRECTORY file list access for given PREFIX-KEY.
 	OPTIONS are taken as association list, they're described in README file."
-	(lexical-let* (
+	(let* (
 			(directory
 				(if (equal (substring directory (- (length directory) 1)) "/")
 					directory
@@ -115,6 +115,7 @@
 		(el-kit-key-set prefix-key key-map)))
 
 (provide 'el-fast-filelist)
+(provide 'el-fast-filelist/el-fast-filelist)
 ;; Local Variables:
 ;; tab-width: 2
 ;; End:
